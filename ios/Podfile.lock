@@ -30,6 +30,10 @@ PODS:
   - HyperSnapSDK (2.1.2)
   - React (0.56.0):
     - React/Core (= 0.56.0)
+  - react-native-image-picker (0.14.3):
+    - React
+  - react-native-image-resizer (1.0.0):
+    - React
   - react-native-maps (0.21.0):
     - React
   - React/Core (0.56.0):
@@ -77,6 +81,10 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
+  - RNFS (2.11.15):
+    - React
+  - RNVectorIcons (5.0.0):
+    - React
   - yoga (0.56.0.React)
 
 DEPENDENCIES:
@@ -86,6 +94,8 @@ DEPENDENCIES:
   - Google-Maps-iOS-Utils
   - GoogleMaps
   - HyperSnapSDK
+  - react-native-image-picker (from `../node_modules/react-native-image-picker`)
+  - react-native-image-resizer (from `../node_modules/react-native-image-resizer`)
   - react-native-maps (from `../node_modules/react-native-maps`)
   - React/Core (from `../node_modules/react-native`)
   - React/CxxBridge (from `../node_modules/react-native`)
@@ -100,6 +110,8 @@ DEPENDENCIES:
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTVibration (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
+  - RNFS (from `../node_modules/react-native-fs`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga/yoga.podspec`)
 
 SPEC REPOS:
@@ -118,8 +130,16 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   React:
     :path: "../node_modules/react-native"
+  react-native-image-picker:
+    :path: "../node_modules/react-native-image-picker"
+  react-native-image-resizer:
+    :path: "../node_modules/react-native-image-resizer"
   react-native-maps:
     :path: "../node_modules/react-native-maps"
+  RNFS:
+    :path: "../node_modules/react-native-fs"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga/yoga.podspec"
 
@@ -132,9 +152,13 @@ SPEC CHECKSUMS:
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   HyperSnapSDK: 31b2b4bbdfab1d8e737c954355177e9b7d8d5bbb
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
+  react-native-image-picker: b303e31c3c4ada1d7cb1342423d328d2efb07fb3
+  react-native-image-resizer: 04a3409e7d4ad646c4468671c69dec490def139c
   react-native-maps: 066c2afcc89e18726377bcc685315f989ca22449
+  RNFS: bbb1a64eb245763daf34aea86f97c97c4e85f74c
+  RNVectorIcons: c0dbfbf6068fefa240c37b0f71bd03b45dddac44
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: 9ba86a39587be1e40ca7447980537fc75d41756a
+PODFILE CHECKSUM: 870ac0b168e18f2e237cf117a2cbd812ead8261f
 
 COCOAPODS: 1.5.3
