@@ -1,17 +1,27 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Animated } from 'react-native';
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 import App from './App'
 import UploadPhoto from './Component/PhotoUpload';
 import { Spinner} from './Component/Common'
-
+import Animation from './Animation'
+import firebase from 'react-native-firebase'
 
 class MessageScreen extends React.Component {
 
   state = {
     isLoading: false,
     imageUri: 'https://www.sparklabs.com/forum/styles/comboot/theme/images/default_avatar.jpg'
+  }
+
+  
+  componentWillMount() {
+    firebase.analytics().setCurrentScreen('photoUpload');
+  }
+
+  componentDidMount() {
+    firebase.analytics().logEvent("photo_upload_screen_appeared")
   }
 
   shouldStartLoading(flag) {
@@ -54,21 +64,23 @@ class MessageScreen extends React.Component {
   }
 }
 
-class ShareScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Share Screen!</Text>
-      </View>
-    );
-  }
-}
-
 class ProfileScreen extends React.Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+
+      }
+    }
+
+    componentWillMount() {
+      this.position = new Animated.ValueXY(0,0)
+
+    }
+
     render() {
       return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text>Profile Screen!</Text>
+        <View style={ this.position.getLayout()}>
+          <View style = {{ width: 100, height: 100, borderRadius: 50, backgroundColor: 'purple'}}/>
         </View>
       );
     }
@@ -77,7 +89,7 @@ class ProfileScreen extends React.Component {
 export default Navigator = createBottomTabNavigator({
     Map: App,
     Message: MessageScreen,
-    Share: ShareScreen,
+    Share: Animation,
     Profile: ProfileScreen,
 },
 {

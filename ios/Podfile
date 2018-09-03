@@ -7,6 +7,7 @@ target 'sampleAcko' do
   rn_path = '../node_modules/react-native'
   
   pod 'HyperSnapSDK'
+  pod 'Firebase/Core'
   
   pod 'yoga', path: "#{rn_path}/ReactCommon/yoga/yoga.podspec"
   pod 'React', path: rn_path, subspecs: [
@@ -42,5 +43,7 @@ target 'sampleAcko' do
   pod 'react-native-image-resizer', :path => '../node_modules/react-native-image-resizer'
 
   pod 'RNFS', :path => '../node_modules/react-native-fs'
+
+  pod 'react-native-google-analytics-bridge', :path => '../node_modules/react-native-google-analytics-bridge'
 
 end

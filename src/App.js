@@ -8,11 +8,13 @@
 
 import React, {Component} from 'react';
 import { StyleSheet, View} from 'react-native';
-import MapView from 'react-native-maps'
 import RenderMapView from '../src/Component/Map'
+import { tracker } from './GATracker'
+import firebase from 'react-native-firebase'
 
 export default class App extends Component {
 
+  
   constructor(props) {
     super(props)
     this.state = {
@@ -27,6 +29,11 @@ export default class App extends Component {
         longitude: -122.4324
       },
     }
+  }
+
+  componentWillMount() {
+    firebase.analytics().logEvent("home_screen_apprearing", {data: 'maps'})
+    firebase.analytics().setCurrentScreen('Home_screen')
   }
 
   setMarkerPosition(region) {
