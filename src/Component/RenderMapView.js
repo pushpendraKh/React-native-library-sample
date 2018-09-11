@@ -1,11 +1,11 @@
 import React from 'react'
-import MapView, {Marker} from 'react-native-maps'
+import MapView, { Marker } from 'react-native-maps'
 
-const RenderMapView = ({style, onRegionChange, coordinate, initialRegion, }) => {
+const RenderMapView = ({style, onRegionChange, coordinate, region }) => {
     return(
       <MapView
           style = {style}
-          initialRegion={ initialRegion }
+          region={ region }
           onRegionChange = { onRegionChange }
        >
           <Marker

@@ -50,13 +50,14 @@ export default class MapScreen extends Component {
   }
 
   render() {
+    console.log(this.state.coordinate);
     return (
       <View style={styles.container}>
       <RenderMapView 
           style = {{flex: 8}}
           onRegionChange = { (region) => this.setMarkerPosition(region)}
           coordinate = { this.state.coordinate } 
-          initialRegion = { this.state.initialRegion }
+          region = { this.state.initialRegion }
        />
        <Text>
          { "Latitude " + this.state.coordinate.latitude + " , " + "Longitude " + this.state.coordinate.longitude }
@@ -67,9 +68,6 @@ export default class MapScreen extends Component {
             this.props.navigation.navigate('Web', {
               url: 'https://www.linkedin.com/in/pushpendra-khandelwal-3a818ba1/'
             })
-            // NavigationService.navigate('Web', {
-            //   url: 'https://www.linkedin.com/in/pushpendra-khandelwal-3a818ba1/'
-            // })
           }}
          >
             Click me
