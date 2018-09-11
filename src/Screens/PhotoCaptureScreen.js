@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
-import UploadPhoto from './Component/PhotoUpload';
-import { Spinner} from './Component/Common'
+import UploadPhoto from '../Component/PhotoUpload';
+import { Spinner} from '../Component/Common'
 import firebase from 'react-native-firebase'
 
-export default class MessageScreen extends React.Component {
+export default class PhotoCaptureScreen extends React.Component {
 
     state = {
       isLoading: false,

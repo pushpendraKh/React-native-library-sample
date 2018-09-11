@@ -3,7 +3,7 @@ import {
   WebView,
 } from 'react-native';
 
-export default class LinkWebView extends Component {
+export default class WebViewScreen extends Component {
 
   componentWillMount() {
     console.log("Link");

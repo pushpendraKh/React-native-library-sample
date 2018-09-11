@@ -8,7 +8,7 @@ HEADER_MIN_HEIGHT = 70
 PROFILE_MAX_HEIGHT = 80
 PROFILE_MIN_HEIGHT = 40
 
-export default class Animation extends Component {
+export default class AnimationScreen extends Component {
 
     constructor(props) {
         super(props)
