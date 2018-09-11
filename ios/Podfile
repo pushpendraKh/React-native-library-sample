@@ -25,12 +25,12 @@ target 'sampleAcko' do
   'RCTVibration',
   'RCTWebSocket',
   ]
-  
+#  
   # React Native third party dependencies podspecs
   pod 'DoubleConversion', :podspec => "#{rn_path}/third-party-podspecs/DoubleConversion.podspec"
   pod 'glog', :podspec => "#{rn_path}/third-party-podspecs/glog.podspec"
   pod 'Folly', :podspec => "#{rn_path}/third-party-podspecs/Folly.podspec"
-  
+
   # react-native-maps dependencies
   pod 'react-native-maps', path: '../node_modules/react-native-maps'
   pod 'GoogleMaps'  # Remove this line if you don't want to support GoogleMaps on iOS
@@ -38,12 +38,12 @@ target 'sampleAcko' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
-  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+#  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
 
-  pod 'react-native-image-resizer', :path => '../node_modules/react-native-image-resizer'
+#pod 'react-native-image-resizer', :path => '../node_modules/react-native-image-resizer'
 
   pod 'RNFS', :path => '../node_modules/react-native-fs'
 
-  pod 'react-native-google-analytics-bridge', :path => '../node_modules/react-native-google-analytics-bridge'
+# pod 'react-native-google-analytics-bridge', :path => '../node_modules/react-native-google-analytics-bridge'
 
 end

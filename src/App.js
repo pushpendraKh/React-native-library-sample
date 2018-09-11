@@ -9,24 +9,27 @@
 import React, {Component} from 'react';
 import { StyleSheet, View} from 'react-native';
 import RenderMapView from '../src/Component/Map'
-import { tracker } from './GATracker'
 import firebase from 'react-native-firebase'
+import { Button } from './Component/Common/Button';
 
 export default class App extends Component {
 
-  
+  static navigationOptions = {
+    header: null
+  }
+
   constructor(props) {
     super(props)
     this.state = {
       region: {
-        latitude: 37.78825,
-        longitude: -122.4324,
+        latitude: 12.9030558,
+        longitude: 77.5969069,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       },
       coordinate: {
-        latitude: 37.78825,
-        longitude: -122.4324
+        latitude: 12.9030558,
+        longitude: 77.5969069
       },
     }
   }
@@ -48,12 +51,24 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <RenderMapView 
-            onRegionChange = { (region) => this.setMarkerPosition(region)}
-            coordinate = { this.state.coordinate } 
-            initialRegion = { this.state.initialRegion }
-         />
-      </View>
+      <RenderMapView 
+          style = {{flex: 8}}
+          onRegionChange = { (region) => this.setMarkerPosition(region)}
+          coordinate = { this.state.coordinate } 
+          initialRegion = { this.state.initialRegion }
+       />
+       <Button
+          style = {{flex: 1}}
+          onPress = { () => {
+            console.log(this.props.navigation);
+            this.props.navigation.navigate('Web', {
+              url: 'https://www.linkedin.com/in/pushpendra-khandelwal-3a818ba1/'
+            })
+          }}
+         >
+            Click me
+       </Button>
+    </View>
     );
   }
 }

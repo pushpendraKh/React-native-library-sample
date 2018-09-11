@@ -1,10 +1,10 @@
 import React from 'react'
 import MapView, {Marker} from 'react-native-maps'
 
-const RenderMapView = ({onRegionChange, coordinate, initialRegion}) => {
+const RenderMapView = ({onRegionChange, coordinate, initialRegion, style}) => {
     return(
       <MapView
-          style = {{flex:1}}
+          style = {style}
           initialRegion={ initialRegion }
           onRegionChange = { onRegionChange }
        >

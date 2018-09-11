@@ -92,7 +92,7 @@ export default class Animation extends Component {
            </Animated.View>
 
            <ScrollView 
-                style = {container}
+                style = {{flex: 1}}
                 scrollEventThrottle = {16}
                 onScroll = { Animated.event(
                     [{nativeEvent: {
@@ -123,6 +123,7 @@ export default class Animation extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        // backgroundColor: 'white'
     },
     headerStyle: {
         position: 'absolute',

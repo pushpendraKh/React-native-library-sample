@@ -3,66 +3,9 @@ import { Text, View, Animated } from 'react-native';
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 import App from './App'
-import UploadPhoto from './Component/PhotoUpload';
-import { Spinner} from './Component/Common'
+import MessageScreen from './MessageScreen'
 import Animation from './Animation'
-import firebase from 'react-native-firebase'
-
-class MessageScreen extends React.Component {
-
-  state = {
-    isLoading: false,
-    imageUri: 'https://www.sparklabs.com/forum/styles/comboot/theme/images/default_avatar.jpg'
-  }
-
-  
-  componentWillMount() {
-    firebase.analytics().setCurrentScreen('photoUpload');
-  }
-
-  componentDidMount() {
-    firebase.analytics().logEvent("photo_upload_screen_appeared")
-  }
-
-  shouldStartLoading(flag) {
-    this.setState({
-      isLoading: flag
-    })
-  }
-
-  didGetResponse(response) {
-    this.setState({
-      isLoading: false,
-      imageUri: response.uri
-    })
-  }
-
-  renderPhotoCapture() {
-    if (this.state.isLoading) {
-      return <Spinner/>
-    } else {
-      return(
-        <UploadPhoto
-        onStart = { () => {
-          this.shouldStartLoading(true)
-        }}
-        onResponse = { (response) => {
-          this.didGetResponse(response)
-        }}
-        imageUri = { this.state.imageUri }
-        />
-      )
-    }
-  }
-
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          { this.renderPhotoCapture() }
-      </View>
-    )
-  }
-}
+import LinkWebView from './LinkWebView'
 
 class ProfileScreen extends React.Component {
     constructor(props) {
@@ -85,26 +28,46 @@ class ProfileScreen extends React.Component {
       );
     }
   }
-  
+
+const WebStackView = createStackNavigator({
+  Map: App,
+  Web: {
+    screen: LinkWebView,
+    navigationOptions: {
+      title: 'Linkedin',
+    },
+  }
+})  
+
+class TabNavigation extends React.Component {
+
+  static navigationOptions = { header: null }
+
+  render() {
+    return <Navigator></Navigator>
+  }
+
+}
+
 export default Navigator = createBottomTabNavigator({
-    Map: App,
-    Message: MessageScreen,
-    Share: Animation,
+    Map: WebStackView,
+    Upload: MessageScreen,
+    Animation: Animation,
     Profile: ProfileScreen,
-},
-{
+  },
+  {
   navigationOptions: ({ navigation }) => ({
-    tabBarIcon: ({ focused, tintColor }) => {
+    tabBarIcon: ({ tintColor }) => {
       const { routeName } = navigation.state;
       let iconName;
       switch (routeName) {
         case 'Map':  
-           iconName = `ios-map`//focused ? `ios-home` : `home-outline`
-           break
-        case 'Message': 
+          iconName = `ios-map`
+          break
+        case 'Animation': 
           iconName = `ios-mail`
           break 
-        case 'Share': 
+        case 'Upload': 
           iconName = `ios-share`
           break
         case 'Profile': 
@@ -115,12 +78,27 @@ export default Navigator = createBottomTabNavigator({
       return <Icon name={iconName} size={25} color={tintColor} />;
     },
   }),
-  
+
   tabBarOptions: {
     activeTintColor: 'black',
     inactiveTintColor: 'gray',
   },
-}
-)
+  })
 
+const MainNavigator = createStackNavigator({
+  Main: {
+    screen: TabNavigation,
+    navigationOptions: { header: null }
+  },
+  // Tab: {
+  //     screen: TabNavigation,
+  //     navigationOptions: { header: null
+  //         //title: 'WEB VIEW',
+  //         // headerStyle: {
+  //         //     backgroundColor: '#568EA4',
+  //         // },
+  //     },
+  // },
+  Web: LinkWebView
 
+})
