@@ -3,9 +3,14 @@ package com.sampleacko;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+
 import io.invertase.firebase.RNFirebasePackage;
+
 import com.rnfs.RNFSPackage;
+
 import fr.bamlab.rnimageresizer.ImageResizerPackage;
+import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
+
 import com.imagepicker.ImagePickerPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.airbnb.android.react.maps.MapsPackage;
@@ -19,39 +24,40 @@ import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
 
-  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+    private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+        @Override
+        public boolean getUseDeveloperSupport() {
+            return BuildConfig.DEBUG;
+        }
+
+        @Override
+        protected List<ReactPackage> getPackages() {
+            return Arrays.<ReactPackage>asList(
+                    new MainReactPackage(),
+                    new RNFirebasePackage(),
+                    new RNFirebaseAnalyticsPackage(),
+                    new RNFSPackage(),
+                    new ImageResizerPackage(),
+                    new ImagePickerPackage(),
+                    new VectorIconsPackage(),
+                    new MapsPackage()
+            );
+        }
+
+        @Override
+        protected String getJSMainModuleName() {
+            return "index";
+        }
+    };
+
     @Override
-    public boolean getUseDeveloperSupport() {
-      return BuildConfig.DEBUG;
+    public ReactNativeHost getReactNativeHost() {
+        return mReactNativeHost;
     }
 
     @Override
-    protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-            new RNFirebasePackage(),
-            new RNFSPackage(),
-            new ImageResizerPackage(),
-            new ImagePickerPackage(),
-            new VectorIconsPackage(),
-            new MapsPackage()
-      );
+    public void onCreate() {
+        super.onCreate();
+        SoLoader.init(this, /* native exopackage */ false);
     }
-
-    @Override
-    protected String getJSMainModuleName() {
-      return "index";
-    }
-  };
-
-  @Override
-  public ReactNativeHost getReactNativeHost() {
-    return mReactNativeHost;
-  }
-
-  @Override
-  public void onCreate() {
-    super.onCreate();
-    SoLoader.init(this, /* native exopackage */ false);
-  }
 }
