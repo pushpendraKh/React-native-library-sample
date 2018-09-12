@@ -20,20 +20,21 @@ export default class PhotoCaptureScreen extends React.Component {
       firebase.analytics().logEvent("photo_upload_screen_appeared")
     }
   
-    shouldStartLoading(flag) {
+    shouldStartLoading = (flag) => {
       this.setState({
         isLoading: flag
       })
     }
   
-    didGetResponse(response) {
+    didGetResponse =(response) => {
+      console.log(response)
       this.setState({
         isLoading: false,
-        imageUri: response.uri
+        imageUri: response.didCancel ? this.state.imageUri : response.uri
       })
     }
   
-    renderPhotoCapture() {
+    renderPhotoCapture =() => {
       if (this.state.isLoading) {
         return <Spinner/>
       } else {
@@ -42,9 +43,7 @@ export default class PhotoCaptureScreen extends React.Component {
           onStart = { () => {
             this.shouldStartLoading(true)
           }}
-          onResponse = { (response) => {
-            this.didGetResponse(response)
-          }}
+          onResponse = { this.didGetResponse }
           imageUri = { this.state.imageUri }
           />
         )
@@ -52,6 +51,7 @@ export default class PhotoCaptureScreen extends React.Component {
     }
   
     render() {
+      console.log("this.state", this.state);
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             { this.renderPhotoCapture() }
