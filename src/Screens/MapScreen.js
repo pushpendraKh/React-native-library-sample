@@ -7,12 +7,12 @@
  */
 
 import React, {Component} from 'react';
-import { StyleSheet, View} from 'react-native';
-import RenderMapView from '../src/Component/Map'
+import { StyleSheet, View, Text} from 'react-native';
+import RenderMapView from '../Component/RenderMapView'
 import firebase from 'react-native-firebase'
-import { Button } from './Component/Common/Button';
+import { Button } from '../Component/Common/Button';
 
-export default class App extends Component {
+export default class MapScreen extends Component {
 
   static navigationOptions = {
     header: null
@@ -40,6 +40,7 @@ export default class App extends Component {
   }
 
   setMarkerPosition(region) {
+    console.log(region);
     this.setState({
       coordinate: {
         latitude: region.latitude,
@@ -49,18 +50,21 @@ export default class App extends Component {
   }
 
   render() {
+    console.log(this.state.coordinate);
     return (
       <View style={styles.container}>
       <RenderMapView 
           style = {{flex: 8}}
           onRegionChange = { (region) => this.setMarkerPosition(region)}
           coordinate = { this.state.coordinate } 
-          initialRegion = { this.state.initialRegion }
+          region = { this.state.initialRegion }
        />
+       <Text>
+         { "Latitude " + this.state.coordinate.latitude + " , " + "Longitude " + this.state.coordinate.longitude }
+       </Text>  
        <Button
           style = {{flex: 1}}
           onPress = { () => {
-            console.log(this.props.navigation);
             this.props.navigation.navigate('Web', {
               url: 'https://www.linkedin.com/in/pushpendra-khandelwal-3a818ba1/'
             })
