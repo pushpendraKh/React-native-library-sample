@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="Your Google maps API Key Here" />
+            android:value="AIzaSyAiq7Ai4lYYxiMlAJOo9mCunU2UUh4zG3M" />
         <activity
             android:name=".MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
