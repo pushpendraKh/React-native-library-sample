@@ -6,7 +6,7 @@ const RenderMapView = ({style, onRegionChange, coordinate, region }) => {
       <MapView
           style = {style}
           region={ region }
-          onRegionChange = { onRegionChange }
+          onRegionChangeComplete = { onRegionChange }
        >
           <Marker
             draggable

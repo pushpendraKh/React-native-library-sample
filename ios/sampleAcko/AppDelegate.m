@@ -10,6 +10,7 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 @import Firebase;
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation AppDelegate
 
@@ -31,6 +32,7 @@
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   [FIRApp configure];
+  [GMSServices provideAPIKey:@"AIzaSyAiq7Ai4lYYxiMlAJOo9mCunU2UUh4zG3M"];
   return YES;
 }
 

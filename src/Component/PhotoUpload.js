@@ -2,7 +2,7 @@ import React from 'react'
 import { Image, StyleSheet } from 'react-native'
 import PhotoUpload from 'react-native-photo-upload'
 
-const UploadPhoto = ({onStart, onResponse, imageUri}) => {
+const UploadPhoto = ({onStart, onResponse, onCancel, imageUri}) => {
     return(
         <PhotoUpload
             onPhotoSelect={avatar => {
@@ -12,6 +12,7 @@ const UploadPhoto = ({onStart, onResponse, imageUri}) => {
             }}
             onResponse = { onResponse }
             onStart = { onStart }
+            onCancel = { onCancel }
          >
             <Image
                 style={styles.imageStyle}

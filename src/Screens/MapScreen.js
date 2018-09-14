@@ -39,9 +39,10 @@ export default class MapScreen extends Component {
     firebase.analytics().setCurrentScreen('Home_screen')
   }
 
-  setMarkerPosition(region) {
+  setMarkerPosition = (region) => {
     console.log(region);
     this.setState({
+      region: region,
       coordinate: {
         latitude: region.latitude,
         longitude: region.longitude
@@ -50,14 +51,14 @@ export default class MapScreen extends Component {
   }
 
   render() {
-    console.log(this.state.coordinate);
+    console.log(this.state.region);
     return (
       <View style={styles.container}>
       <RenderMapView 
           style = {{flex: 8}}
-          onRegionChange = { (region) => this.setMarkerPosition(region)}
+          onRegionChange = {this.setMarkerPosition}
           coordinate = { this.state.coordinate } 
-          region = { this.state.initialRegion }
+          region = { this.state.region }
        />
        <Text>
          { "Latitude " + this.state.coordinate.latitude + " , " + "Longitude " + this.state.coordinate.longitude }
