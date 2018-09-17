@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
+    "android": "node node_modules/react-native/local-cli/cli.js run-android",
+    "lint": "tslint -p \".\" -t stylish"
   },
   "dependencies": {
     "react": "16.4.1",
@@ -16,12 +19,32 @@
     "react-navigation": "^2.12.1"
   },
   "devDependencies": {
+    "@types/react": "^16.4.14",
+    "@types/react-native": "^0.56.19",
     "babel-jest": "23.4.2",
     "babel-preset-react-native": "5.0.2",
     "jest": "23.5.0",
-    "react-test-renderer": "16.4.1"
+    "react-native-typescript-transformer": "^1.2.10",
+    "react-test-renderer": "16.4.1",
+    "tslint": "^5.11.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^3.6.0",
+    "tslint-react-recommended": "^1.0.15",
+    "typescript": "^3.0.3"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/src/.*\\.(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }

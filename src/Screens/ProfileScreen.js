@@ -18,7 +18,7 @@ export default class ProfileScreen extends React.Component {
                style = {styles.buttonStyle}
               onPress = { () => {
                 if (Platform.OS == "ios") {
-                  NativeModules.ZendriveHelper.setUpAndStartZenDrive("9694959495")
+                  NativeModules.ZendriveHelper.setupHypertrack()
                 } else {
                   console.log("Need to implement android native method")
                 }

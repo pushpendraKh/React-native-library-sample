@@ -1369,6 +1369,16 @@ third-party archives.
 			<key>License</key>
 			<string>Copyright</string>
 			<key>Title</key>
+			<string>GoogleAppMeasurement</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>Copyright 2018 Google</string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
 			<string>GoogleMaps</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
@@ -1581,7 +1591,7 @@ third-party archives.
 			<key>License</key>
 			<string>Apache</string>
 			<key>Title</key>
-			<string>GoogleToolboxForMac</string>
+			<string>GoogleUtilities</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

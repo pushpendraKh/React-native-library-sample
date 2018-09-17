@@ -39,8 +39,12 @@
 	<string></string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This is to track driving behaviour</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Hypertrack </string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This is to track driving behaviour</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Hypertrack </string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string></string>
 	<key>NSPhotoLibraryUsageDescription</key>

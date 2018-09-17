@@ -23,5 +23,8 @@ RCT_EXTERN_METHOD(permissionNotGranted);
 
 RCT_EXTERN_METHOD(setUpAndStartZenDrive:(NSString*)userId)
 RCT_EXTERN_METHOD(disableZenDrive)
+RCT_EXTERN_METHOD(openDocumentPicker)
+RCT_EXTERN_METHOD(setupHypertrack)
+
 
 @end
