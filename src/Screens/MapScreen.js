@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import { StyleSheet, View, Text} from 'react-native';
+import { StyleSheet, View, Text, NativeModules} from 'react-native';
 import RenderMapView from '../Component/RenderMapView'
 import firebase from 'react-native-firebase'
 import { Button } from '../Component/Common/Button';
@@ -60,7 +60,7 @@ export default class MapScreen extends Component {
           coordinate = { this.state.coordinate } 
           region = { this.state.region }
        />
-       <Text>
+       <Text style = {styles.coordinateStyle}>
          { "Latitude " + this.state.coordinate.latitude + " , " + "Longitude " + this.state.coordinate.longitude }
        </Text>  
        <Button
@@ -87,4 +87,9 @@ const styles = StyleSheet.create({
   mapStyle: {
     flex: 1,
   },
+
+  coordinateStyle: {
+    paddingTop: 10,
+    textAlign: 'center'
+  }
 });

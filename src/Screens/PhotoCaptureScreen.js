@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, NativeModules } from 'react-native';
 import UploadPhoto from '../Component/PhotoUpload';
 import { Spinner} from '../Component/Common'
 import firebase from 'react-native-firebase'
@@ -28,10 +28,10 @@ export default class PhotoCaptureScreen extends React.Component {
   
     didGetResponse =(response) => {
       console.log(response)
-      this.setState({
-        isLoading: false,
-        imageUri: response.didCancel ? this.state.imageUri : response.uri
-      })
+        this.setState({
+          isLoading: false,
+          imageUri: (response.didCancel)  ? this.state.imageUri : response.uri
+        })
     }
   
     renderPhotoCapture =() => {

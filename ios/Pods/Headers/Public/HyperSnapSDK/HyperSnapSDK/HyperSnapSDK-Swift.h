@@ -1,1 +1,0 @@
-../../../../HyperSnapSDK/HyperSnapSDK.framework/Headers/HyperSnapSDK-Swift.h

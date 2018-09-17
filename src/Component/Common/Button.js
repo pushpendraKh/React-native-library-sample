@@ -18,7 +18,7 @@ const Button = (props) => {
 const styles = {
 
     textStyle: {
-        color: '#007aff',
+        color: 'white',
         fontSize: 16,
         fontWeight: '600',
     },

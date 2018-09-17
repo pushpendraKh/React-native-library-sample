@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, Animated } from 'react-native'
+import { View, Animated, NativeModules, Platform } from 'react-native'
+import { Button } from '../Component/Common';
 
 export default class ProfileScreen extends React.Component {
     constructor(props) {
@@ -8,14 +9,41 @@ export default class ProfileScreen extends React.Component {
 
     componentWillMount() {
       this.position = new Animated.ValueXY(0,0)
-
     }
 
     render() {
       return (
-        <View style={ this.position.getLayout()}>
-          <View style = {{ width: 100, height: 100, borderRadius: 50, backgroundColor: 'purple'}}/>
+        <View style={ styles.container}>
+            <Button
+               style = {styles.buttonStyle}
+              onPress = { () => {
+                if (Platform.OS == "ios") {
+                  NativeModules.ZendriveHelper.setUpAndStartZenDrive("9694959495")
+                } else {
+                  console.log("Need to implement android native method")
+                }
+                
+              }}
+         >
+            Present Action Sheet
+       </Button>
         </View>
       );
     }
+  }
+
+  const styles = {
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+
+    buttonStyle: {
+      height: 50,
+      width: null,
+      paddingLeft: 20,
+      paddingRight: 20,
+    }
+
   }
