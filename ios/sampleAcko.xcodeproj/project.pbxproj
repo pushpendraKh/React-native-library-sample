@@ -61,6 +61,7 @@
 		F4B4C97A214F7EDA00FE686C /* AIRGoogleMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B4C961214F7EDA00FE686C /* AIRGoogleMap.m */; };
 		F4B4C97B214F7EDA00FE686C /* AIRGoogleMapPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B4C965214F7EDA00FE686C /* AIRGoogleMapPolygon.m */; };
 		F4B4C97C214F7EDA00FE686C /* AIRGMSMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B4C966214F7EDA00FE686C /* AIRGMSMarker.m */; };
+		F4DA78C0215229C6009134C4 /* RNHyperTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DA78BE215229C6009134C4 /* RNHyperTrack.m */; };
 		F4F0913721478B5800F91CDE /* libRCTImageResizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F0913621478B3900F91CDE /* libRCTImageResizer.a */; };
 		F4F0913821478BF900F91CDE /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F091302147889E00F91CDE /* libRNImagePicker.a */; };
 		F77AB047D7AF42349621F5DE /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08C11277034842779F30545A /* FontAwesome5_Brands.ttf */; };
@@ -441,6 +442,8 @@
 		F4B4C965214F7EDA00FE686C /* AIRGoogleMapPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIRGoogleMapPolygon.m; sourceTree = "<group>"; };
 		F4B4C966214F7EDA00FE686C /* AIRGMSMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIRGMSMarker.m; sourceTree = "<group>"; };
 		F4B4C967214F7EDA00FE686C /* DummyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyView.h; sourceTree = "<group>"; };
+		F4DA78BE215229C6009134C4 /* RNHyperTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNHyperTrack.m; path = "../node_modules/react-native-hypertrack/_ios/RNHyperTrack.m"; sourceTree = "<group>"; };
+		F4DA78BF215229C6009134C4 /* RNHyperTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNHyperTrack.h; path = "../node_modules/react-native-hypertrack/_ios/RNHyperTrack.h"; sourceTree = "<group>"; };
 		F4F091042147889E00F91CDE /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
 		F4F0913121478B3900F91CDE /* RCTImageResizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImageResizer.xcodeproj; path = "../node_modules/react-native-image-resizer/ios/RCTImageResizer.xcodeproj"; sourceTree = "<group>"; };
 		F6C4C319C4F4452694B72FB2 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
@@ -565,6 +568,8 @@
 		13B07FAE1A68108700A75B9A /* sampleAcko */ = {
 			isa = PBXGroup;
 			children = (
+				F4DA78BF215229C6009134C4 /* RNHyperTrack.h */,
+				F4DA78BE215229C6009134C4 /* RNHyperTrack.m */,
 				F4B4C93D214F7EDA00FE686C /* AirGoogleMaps */,
 				F42220A0214F6BC90051D138 /* Zendrive */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -820,7 +825,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				A25148DC11A75A85A6F61FBB /* [CP] Copy Pods Resources */,
+				F0A2A43315F8D9AF2AE364FE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -843,6 +848,11 @@
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = M35DLYREN6;
 						LastSwiftMigration = 0940;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1251,7 +1261,25 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		A25148DC11A75A85A6F61FBB /* [CP] Copy Pods Resources */ = {
+		C6CE27D2F393DA5C2123F76D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sampleAcko-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0A2A43315F8D9AF2AE364FE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1259,6 +1287,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-sampleAcko/Pods-sampleAcko-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/HyperTrack/HyperTrack.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
@@ -1277,6 +1306,7 @@
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HyperTrack.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
@@ -1295,24 +1325,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sampleAcko/Pods-sampleAcko-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C6CE27D2F393DA5C2123F76D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-sampleAcko-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1334,6 +1346,7 @@
 				F4B4C97B214F7EDA00FE686C /* AIRGoogleMapPolygon.m in Sources */,
 				F4B4C973214F7EDA00FE686C /* AIRGoogleMapOverlay.m in Sources */,
 				F4B4C975214F7EDA00FE686C /* AIRGoogleMapPolylineManager.m in Sources */,
+				F4DA78C0215229C6009134C4 /* RNHyperTrack.m in Sources */,
 				F4B4C96D214F7EDA00FE686C /* AIRGoogleMapCircle.m in Sources */,
 				F42220A2214F6BE60051D138 /* ZendriveHelper.swift in Sources */,
 				F4B4C978214F7EDA00FE686C /* AIRGoogleMapCallout.m in Sources */,

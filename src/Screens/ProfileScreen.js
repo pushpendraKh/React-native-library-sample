@@ -1,14 +1,37 @@
 import React from 'react'
 import { View, Animated, NativeModules, Platform } from 'react-native'
 import { Button } from '../Component/Common';
+import { RNHyperTrack as RNHyperTrackImport } from 'react-native-hypertrack'
 
 export default class ProfileScreen extends React.Component {
+
     constructor(props) {
       super(props)
+      this.RNHyperTrack = undefined;
+      this.setupHyperTrackInstance()
+      this.initializeHyperTrack()
+
     }
 
     componentWillMount() {
       this.position = new Animated.ValueXY(0,0)
+    }
+
+    setupHyperTrackInstance = () => {
+      if (Platform.OS = "ios") {
+        this.RNHyperTrack = NativeModules.RNHyperTrack;
+      } else {
+        this.RNHyperTrack = RNHyperTrackImport;
+      }
+    }
+
+    initializeHyperTrack = () => {
+      this.RNHyperTrack.initialize('pk_41daff593b32c8abd605515f4d8dd8e2af3637ed')
+      this.RNHyperTrack.requestAlwaysLocationAuthorization("Hypertrack", "message");
+  
+      if (Platform.OS = "ios") {
+        this.RNHyperTrack.requestMotionAuthorization();
+      }
     }
 
     render() {

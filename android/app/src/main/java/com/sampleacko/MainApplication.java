@@ -3,6 +3,7 @@ package com.sampleacko;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import io.hypertrack.RNHyperTrackPackage;
 
 import io.invertase.firebase.RNFirebasePackage;
 
@@ -34,6 +35,7 @@ public class MainApplication extends Application implements ReactApplication {
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
                     new MainReactPackage(),
+            new RNHyperTrackPackage(),
                     new RNFirebasePackage(),
                     new RNFirebaseAnalyticsPackage(),
                     new RNFSPackage(),

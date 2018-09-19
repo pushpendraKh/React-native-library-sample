@@ -46,18 +46,7 @@ class ZendriveHelper: NSObject {
   @objc func disableZenDrive() {
     Zendrive.teardown()
   }
-  
-  @objc func setupHypertrack() {
     
-//    HyperTrackCore.requestLocationPermission { (error) in
-//      print(error)
-//    }
-//
-//    HyperTrackCore.requestActivityPermission { (error) in
-//      print(error)
-//    }
-  }
-  
   @objc func openDocumentPicker() {
 
     
