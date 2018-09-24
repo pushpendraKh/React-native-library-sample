@@ -39,8 +39,12 @@
 	<string/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This is to track driving behaviour</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Hypertrack </string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This is to track driving behaviour</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Hypertrack </string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string/>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -61,6 +65,12 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

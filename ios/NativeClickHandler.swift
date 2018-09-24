@@ -11,6 +11,11 @@ import UIKit
 @objc(NativeClickHandler)
 class NativeClickHandler: NSObject {
   
+  
+  @objc func methodQueue() -> DispatchQueue {
+    return DispatchQueue.main
+  }
+  
   @objc func didButtonClick() {
     let alertController = UIAlertController.init(title: "Button Clicked", message: "This method is exposed in Native iOS", preferredStyle: .actionSheet)
     let okAction = UIAlertAction.init(title: "Ok", style: .default, handler: nil)

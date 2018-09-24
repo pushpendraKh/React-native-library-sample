@@ -8,6 +8,7 @@ target 'sampleAcko' do
   
   # For Event tracking
   pod 'Firebase/Core'
+  pod 'HyperTrack'
   
   # Driver's centric analytics
   pod 'ZendriveSDK', :git => 'https://bitbucket.org/zendrive-root/zendrive_cocoapod.git', :tag => '5.1.0'
@@ -28,7 +29,7 @@ target 'sampleAcko' do
   'RCTVibration',
   'RCTWebSocket',
   ]
-#  
+#
   # React Native third party dependencies podspecs
   pod 'DoubleConversion', :podspec => "#{rn_path}/third-party-podspecs/DoubleConversion.podspec"
   pod 'glog', :podspec => "#{rn_path}/third-party-podspecs/glog.podspec"
@@ -41,5 +42,23 @@ target 'sampleAcko' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
   pod 'RNFS', :path => '../node_modules/react-native-fs'
-
+  
+  post_install do |installer|
+      installer.pods_project.targets.each do |target|
+          target.build_configurations.each do |config|
+              config.build_settings['SWIFT_VERSION'] = '3.0'
+          end
+      end
+      
+      Dir.glob('Pods/SQLite.swift/Sources/SQLite/**/*.swift').each { |path|
+          begin
+              text = File.read(path)
+              text = text.gsub(/import CSQLite/, 'import SQLite3')
+              File.open(path, 'w') { |file| file.puts text }
+              rescue Exception
+              puts "Unable to patch #{path}: #{$!}"
+          end
+      }
+  end
+  
 end

@@ -3,6 +3,11 @@ package com.sampleacko;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+<<<<<<< HEAD
+=======
+import io.hypertrack.RNHyperTrackPackage;
+
+>>>>>>> 609704bcfad5802755ee6456319cfa34762b38e0
 import io.invertase.firebase.RNFirebasePackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.airbnb.android.react.maps.MapsPackage;
@@ -33,6 +38,7 @@ public class MainApplication extends Application implements ReactApplication {
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
                     new MainReactPackage(),
+            new RNHyperTrackPackage(),
                     new RNFirebasePackage(),
                     new RNFirebaseAnalyticsPackage(),
                     new RNFSPackage(),
