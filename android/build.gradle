@@ -18,6 +18,7 @@ buildscript {
 
 allprojects {
     repositories {
+    maven { url 'http://hypertrack-android-sdk.s3-website-us-west-2.amazonaws.com/' }
         mavenLocal()
         jcenter()
         maven {
@@ -37,4 +38,6 @@ ext {
     compileSdkVersion = 27
     targetSdkVersion = 27
     supportLibVersion = "27.1.1"
+    googlePlayServicesVersion = "11.8.0"
+    androidMapsUtilsVersion = "0.5+"
 }

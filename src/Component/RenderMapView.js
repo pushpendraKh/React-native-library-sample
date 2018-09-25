@@ -6,7 +6,7 @@ const RenderMapView = ({style, onRegionChange, coordinate, region }) => {
       <MapView
           style = {style}
           region={ region }
-          provider = "google"
+         // provider = "google"
           onRegionChangeComplete = { onRegionChange }
        >
           <Marker

@@ -4,8 +4,9 @@ import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import io.hypertrack.RNHyperTrackPackage;
-
 import io.invertase.firebase.RNFirebasePackage;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.airbnb.android.react.maps.MapsPackage;
 
 import com.rnfs.RNFSPackage;
 
@@ -13,8 +14,6 @@ import fr.bamlab.rnimageresizer.ImageResizerPackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 
 import com.imagepicker.ImagePickerPackage;
-import com.oblador.vectoricons.VectorIconsPackage;
-import com.airbnb.android.react.maps.MapsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -62,4 +61,6 @@ public class MainApplication extends Application implements ReactApplication {
         super.onCreate();
         SoLoader.init(this, /* native exopackage */ false);
     }
+
+
 }
