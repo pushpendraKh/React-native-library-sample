@@ -13,10 +13,6 @@ export default class ProfileScreen extends React.Component {
 
     }
 
-    componentWillMount() {
-      this.position = new Animated.ValueXY(0,0)
-    }
-
     setupHyperTrackInstance = () => {
       if (Platform.OS = "ios") {
         this.RNHyperTrack = NativeModules.RNHyperTrack;
