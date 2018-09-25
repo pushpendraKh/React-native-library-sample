@@ -61,6 +61,7 @@ class ZendriveHelper: NSObject {
                                                                                  "public.source-code"],
                                                                  in: .import)
     documentController.delegate = self
+    documentController.modalTransitionStyle = .flipHorizontal
     DispatchQueue.main.async {
       let currentViewController = UIApplication.shared.keyWindow?.rootViewController ?? UIViewController()
       currentViewController.present(documentController, animated: true, completion: nil)

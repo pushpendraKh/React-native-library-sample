@@ -32,6 +32,11 @@ export default class ProfileScreen extends React.Component {
       if (Platform.OS = "ios") {
         this.RNHyperTrack.requestMotionAuthorization();
       }
+
+      this.RNHyperTrack.locationAuthorizationStatus().then((result) => {
+        // Handle locationAuthorizationStatus API result here
+        console.log('locationAuthorizationStatus: ', result);
+      });
     }
 
     render() {
@@ -41,11 +46,10 @@ export default class ProfileScreen extends React.Component {
                style = {styles.buttonStyle}
               onPress = { () => {
                 if (Platform.OS == "ios") {
-                  NativeModules.ZendriveHelper.setupHypertrack()
+                  NativeModules.ZendriveHelper.openDocumentPicker()
                 } else {
                   console.log("Need to implement android native method")
                 }
-                
               }}
          >
             Present Action Sheet
