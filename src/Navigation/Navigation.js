@@ -29,7 +29,7 @@ const TabNagivator = createBottomTabNavigator({
           iconName = `ios-share`
           break
         case 'Profile': 
-          iconName = `ios-person`
+          iconName = `ios-share`
           break
         default: 
       }
