@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Animated, NativeModules, Platform } from 'react-native'
+import { View, Animated, NativeModules, Platform, Alert } from 'react-native'
 import { Button } from '../Component/Common';
 import { RNHyperTrack as RNHyperTrackImport } from 'react-native-hypertrack'
 
@@ -24,9 +24,9 @@ export default class ProfileScreen extends React.Component {
     initializeHyperTrack = () => {
       this.RNHyperTrack.initialize('pk_41daff593b32c8abd605515f4d8dd8e2af3637ed')
       this.RNHyperTrack.requestAlwaysLocationAuthorization("Hypertrack", "message");
+      this.RNHyperTrack.requestMotionAuthorization();
   
       if (Platform.OS = "ios") {
-        this.RNHyperTrack.requestMotionAuthorization();
       }
 
       this.RNHyperTrack.locationAuthorizationStatus().then((result) => {
@@ -44,7 +44,7 @@ export default class ProfileScreen extends React.Component {
                 if (Platform.OS == "ios") {
                   NativeModules.ZendriveHelper.openDocumentPicker()
                 } else {
-                  console.log("Need to implement android native method")
+                  Alert.alert("Dhruva", "Need to open document folder in android via native method")
                 }
               }}
          >
