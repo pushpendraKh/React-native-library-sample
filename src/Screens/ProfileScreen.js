@@ -51,6 +51,7 @@ export default class ProfileScreen extends React.Component {
             Present Action Sheet
        </Button>
         </View>
+
       );
     }
   }
