@@ -24,9 +24,9 @@ export default class ProfileScreen extends React.Component {
     initializeHyperTrack = () => {
       this.RNHyperTrack.initialize('pk_41daff593b32c8abd605515f4d8dd8e2af3637ed')
       this.RNHyperTrack.requestAlwaysLocationAuthorization("Hypertrack", "message");
-      this.RNHyperTrack.requestMotionAuthorization();
-  
+      
       if (Platform.OS = "ios") {
+        this.RNHyperTrack.requestMotionAuthorization();
       }
 
       this.RNHyperTrack.locationAuthorizationStatus().then((result) => {
