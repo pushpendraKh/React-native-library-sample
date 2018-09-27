@@ -40,7 +40,7 @@
 		F4110495214B758500347201 /* NativeClickHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4110494214B758500347201 /* NativeClickHandler.swift */; };
 		F4110497214B76E100347201 /* ReactNativeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F4110496214B76E100347201 /* ReactNativeBridge.m */; };
 		F42220A2214F6BE60051D138 /* ZendriveHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42220A1214F6BE60051D138 /* ZendriveHelper.swift */; };
-		F428A771213D17B300D33214 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F428A74B213D17B300D33214 /* GoogleService-Info.plist */; };
+		F4AB3633215CD60D00292242 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4AB3632215CD60D00292242 /* GoogleService-Info.plist */; };
 		F4B4C968214F7EDA00FE686C /* AIRGoogleMapUrlTile.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B4C93F214F7EDA00FE686C /* AIRGoogleMapUrlTile.m */; };
 		F4B4C969214F7EDA00FE686C /* AIRGoogleMapPolygonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B4C942214F7EDA00FE686C /* AIRGoogleMapPolygonManager.m */; };
 		F4B4C96A214F7EDA00FE686C /* AIRGoogleMapMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B4C945214F7EDA00FE686C /* AIRGoogleMapMarker.m */; };
@@ -399,7 +399,7 @@
 		F4110496214B76E100347201 /* ReactNativeBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeBridge.m; sourceTree = "<group>"; };
 		F4110498214B792900347201 /* sampleAcko-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sampleAcko-Bridging-Header.h"; sourceTree = "<group>"; };
 		F42220A1214F6BE60051D138 /* ZendriveHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZendriveHelper.swift; sourceTree = "<group>"; };
-		F428A74B213D17B300D33214 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F4AB3632215CD60D00292242 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F4B4C93E214F7EDA00FE686C /* AIRGoogleMapPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIRGoogleMapPolyline.h; sourceTree = "<group>"; };
 		F4B4C93F214F7EDA00FE686C /* AIRGoogleMapUrlTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIRGoogleMapUrlTile.m; sourceTree = "<group>"; };
 		F4B4C940214F7EDA00FE686C /* AIRGoogleMapMarkerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIRGoogleMapMarkerManager.h; sourceTree = "<group>"; };
@@ -569,6 +569,7 @@
 		13B07FAE1A68108700A75B9A /* sampleAcko */ = {
 			isa = PBXGroup;
 			children = (
+				F4AB3632215CD60D00292242 /* GoogleService-Info.plist */,
 				F4DA78C12152335B009134C4 /* sampleAcko.entitlements */,
 				F4DA78BF215229C6009134C4 /* RNHyperTrack.h */,
 				F4DA78BE215229C6009134C4 /* RNHyperTrack.m */,
@@ -693,7 +694,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				F428A74B213D17B300D33214 /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* sampleAcko */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* sampleAckoTests */,
@@ -1241,7 +1241,7 @@
 				FCA09E19CA8D4216879BB388 /* Foundation.ttf in Resources */,
 				2020F070F1E6484A8FB67486 /* Ionicons.ttf in Resources */,
 				5107B3F54AA446C3911038F8 /* MaterialCommunityIcons.ttf in Resources */,
-				F428A771213D17B300D33214 /* GoogleService-Info.plist in Resources */,
+				F4AB3633215CD60D00292242 /* GoogleService-Info.plist in Resources */,
 				14065B79DFE9492388FD21A8 /* MaterialIcons.ttf in Resources */,
 				6A1B508E172E4CAC9DD9C446 /* Octicons.ttf in Resources */,
 				0A79480ADFA84066849EFB19 /* SimpleLineIcons.ttf in Resources */,
